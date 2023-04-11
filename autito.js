@@ -67,6 +67,27 @@ class Autito
     }
   }
 
+  girarHaciaLaDerecha()
+  {
+    switch(this.direccion) 
+    {
+      case "N":
+        this.direccion="E";
+        break;
+      case "E":
+        this.direccion="S";
+        break;
+      case "S":
+        this.direccion="O";
+        break;
+      case "O":
+        this.direccion="N";
+        break;     
+    }
+  }
+
+  
+
 }
 
 export default Autito;
