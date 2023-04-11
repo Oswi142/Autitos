@@ -32,6 +32,23 @@ class Autito
     this.matriz[x][y]='*';
   }
 
+  definirTamañoTablero(comando)
+  {
+    let cadena = comando.split(',');
+    this.generarTablero(+cadena[0],cadena[1]);
+    return comando;
+  }
+
+  definirPosicionInicial(comando)
+  {
+    let cadena = comando.split(',');
+    this.x = +cadena[0];
+    this.y = +cadena[1];
+    this.direccion = cadena[2];
+    return comando;
+  }
+
+
 }
 
 export default Autito;
