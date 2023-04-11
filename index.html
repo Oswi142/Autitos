@@ -1,27 +1,23 @@
 <html>
   <body>
+    <div class="container">
     <form id="formulario">
       <div>
         <label>Comandos</label><br />
-        <input id="comandos-input" width="500px" height="200px"/>
-        <input type=submit value="ejecutar">
+        <textarea cols="50" id="comandos-input" width="500px" height="200px" ></textarea>
       </div>
+      <br>
+      <button type=submit value="ejecutar" class="btn btn-success">Empezar</button>
     </form>
-    <label>Posición Inicial: </label>
+    <label class="mb-0">Posicion Inicial: </label>
     <label id="posicion-inicial"></label>
     <br>
-    <label>Camino a recorrer: </label>
+    <label>Comandos: </label>
     <label id="comandos"></label>
     <br>
-    <label>Posición Final: </label>
+    <label>Posicion Final: </label>
     <label id="posicion-final"></label>
-      <div>
-        <label>Comandos: </label>
-        <label id="comandos"></label>
-        <br>
-        <label>Posicion Final: </label>
-        <label id="posicion-final"></label>
-      </div>
+  </div>
   </body>
   <script type="module" src="./src/presenter.js"></script>
 </html>
