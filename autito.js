@@ -48,6 +48,24 @@ class Autito
     return comando;
   }
 
+  avanzar()
+  {
+    switch(this.direccion) 
+    {
+      case "N":
+        this.matriz[this.x][this.y++];
+        break;
+      case "O":
+        this.matriz[this.x--][this.y];
+        break;
+      case "S":
+        this.matriz[this.x][this.y--];
+        break;
+      case "E":
+        this.matriz[this.x++][this.y];
+        break;
+    }
+  }
 
 }
 
