@@ -1,21 +1,24 @@
-<!DOCTYPE html>
 <html>
   <body>
-    <div>
-      <label>Comandos</label><br />
-      <input width="500px" height="200px" />
-    </div>
-    <div>
-      <label>Definir la posición inicial: </label>
-      <label id="posicion-inicial"></label>
-      <br>
-      <label>Definir el recorrido:</label>
-      <label id="comandos"></label>
-      <br>
-      <label>Posición Final: </label>
-      <label id="posicion-final"></label>
-    </div>
-    <script type="module" src="./src/presenter.js"></script>
+    <form id="formulario">
+      <div>
+        <label>Comandos</label><br />
+        <input id="comandos-input" width="500px" height="200px"/>
+        <input type=submit value="ejecutar">
+      </div>
     </form>
+    <label id="posicion-inicial"></label>
+      <div id="divPosInicial">
+      </div>
+      <label>Posicion Final: </label>
+      <label id="posicion-final"></label>
+      <div>
+        <label>Comandos: </label>
+        <label id="comandos"></label>
+        <br>
+        <label>Posicion Final: </label>
+        <label id="posicion-final"></label>
+      </div>
   </body>
+  <script type="module" src="./src/presenter.js"></script>
 </html>
