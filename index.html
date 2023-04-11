@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Crear Tablero</title>
-    <style>
-      table {
-        border-collapse: collapse;
-      }
-      td {
-        border: 1px solid black;
-        width: 50px;
-        height: 50px;
-        background-color: white;
-      }
-    </style>
-  </head>
   <body>
-    <label for="filas">Filas:</label>
-    <input type="number" id="filas">
-    <br>
-    <label for="columnas">Columnas:</label>
-    <input type="number" id="columnas">
-    <br>
-    <button onclick="crearTabla()">Crear Tabla</button>
-    <br>
-    <div id="tabla"></div>
-    <br>
-    <script src="tablero.js"></script>
+    <div>
+      <label>Comandos</label><br />
+      <input width="500px" height="200px" />
+    </div>
+    <div>
+      <label>Definir la posición inicial: </label>
+      <label id="posicion-inicial"></label>
+      <br>
+      <label>Definir el recorrido:</label>
+      <label id="comandos"></label>
+      <br>
+      <label>Posición Final: </label>
+      <label id="posicion-final"></label>
+    </div>
+    <script type="module" src="./src/presenter.js"></script>
+    </form>
   </body>
 </html>
