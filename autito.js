@@ -1,10 +1,12 @@
 class Autito
 {
-  constructor(x, y,direccion) {
+  constructor(x, y,direccion) 
+  {
     this.x = x;
     this.y = y;
     this.direccion=direccion;
   }
+
   generarTablero(filas, columnas)
   {
     this.filas = filas;
@@ -15,88 +17,113 @@ class Autito
         this.matriz[i] = new Array(columnas);
     }
   }
-  
-  asignarValores(cadena){
+
+  asignarValores(cadena)
+  {
+    try
+    {
     this.x = +cadena[0];
     this.y = +cadena[1][0];
     this.direccion = cadena[1][1];
+    }
+    catch
+    {
+      alert('Valores erroneos');
+    }
   }
 
-  definirPosicionInicial(comando){
+  definirPosIni(comando)
+  {
     let cadena = comando.toString().split(',');
     this.asignarValores(cadena);
     return comando;
   }
 
-  definirTamanioTablero(comando){
+  definirTamTab(comando)
+  {
+    try{
     let cadena = comando.split(',');
     this.generarTablero(+cadena[0],cadena[1]);
-    return comando;
+    return comando;}
+    catch{
+      alert('Valores erroneos');
+    }
   }
-
+  
   avanzar()
   {
       switch(this.direccion) 
       {
         case "N":
-          if(this.y<this.columnas){
-          this.matriz[this.x][this.y++];
-          }
           if(this.y<this.columnas) this.matriz[this.x][this.y++];
           break;
         case "O":
-          if(this.x>0){
-            this.matriz[this.x--][this.y];
-          }
           if(this.x>0) this.matriz[this.x--][this.y];   
           break;
         case "S":
-          if(this.y>0){
-          this.matriz[this.x][this.y--];
-          }
           if(this.y>0) this.matriz[this.x][this.y--];
           break;
         case "E":
-          if(this.x<this.filas){
-          this.matriz[this.x++][this.y];
-          }
           if(this.x<this.filas)this.matriz[this.x++][this.y];
           break;
       }
   }
 
-  confirmarAvance(comando)
-  {
-    if (comando=="A"){
-      this.avanzar();
+  girarHaciaLaIzquierda(){
+    switch(this.direccion) {
+      case "E":
+        this.direccion="N";
+        break;
+      case "N":
+        this.direccion="O";
+        break;
+      case "O":
+        this.direccion="S";
+        break;
+      case "S":
+        this.direccion="E";
+        break;
     }
-    if(comando=="D"){
-      this.girarDerecha();
+  }
+
+  girarHaciaLaDerecha(){
+    switch(this.direccion) {
+      case "N":
+        this.direccion="E";
+        break;
+      case "E":
+        this.direccion="S";
+        break;
+      case "S":
+        this.direccion="O";
+        break;
+      case "O":
+        this.direccion="N";
+        break;     
     }
-    if(comando=="I"){
-      this.girarIzquierda();
-    }
+  }
+
+  confirmar(comando){
     if (comando=="A") this.avanzar();
-    if(comando=="D")this.girarDerecha();
-    if(comando=="I")this.girarIzquierda();
+    if(comando=="D")this.girarHaciaLaDerecha();
+    if(comando=="I")this.girarHaciaLaIzquierda();
     return this.x+","+this.y+this.direccion;
   }
 
-  avanzarComandos(comandos)
-  {
+  confirmarComandos(comandos){
     for(let i =0;i<comandos.length;i++){
-      this.confirmarAvance(comandos[i]);
+      this.confirmar(comandos[i]);
     }
     return this.x+","+this.y+this.direccion;
   }
 
-  confirmarAvanceInstrucciones(instrucciones)
-  {
+  confirmarInstrucciones(instrucciones){
     let comandos = instrucciones.split('/');
-    this.definirTamanioTablero(comandos[0]);
-    this.definirPosicionInicial(comandos[1]);
-    this.avanzarComandos(comandos[2]);
+    this.definirTamTab(comandos[0]);
+    this.definirPosIni(comandos[1]);
+    this.confirmarComandos(comandos[2]);
     return this.x+","+this.y+this.direccion;
   }
 }
+
 export default Autito;

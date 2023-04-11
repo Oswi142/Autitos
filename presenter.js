@@ -16,5 +16,5 @@ form.addEventListener("submit", (event) => {
   labelPosInicial.innerHTML = cadena[1];
 
   labelComandos.innerHTML = cadena[2];
-  labelPosFinal.innerHTML =  auto.ejecutarInstrucciones(comandos.value) ;
+  labelPosFinal.innerHTML =  Auto.ejecutarInstrucciones(comandos.value) ;
 });
