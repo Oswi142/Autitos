@@ -26,6 +26,12 @@ class Autito
         }
     }
   }
+
+  posicionarAutito(x,y)
+  {
+    this.matriz[x][y]='*';
+  }
+
 }
 
 export default Autito;
