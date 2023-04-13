@@ -70,7 +70,8 @@ class Autito
   }
 
   girarHaciaLaIzquierda(){
-    switch(this.direccion) {
+    switch(this.direccion) 
+    {
       case "E":
         this.direccion="N";
         break;
@@ -127,14 +128,14 @@ class Autito
     if(comando=="J")this.jump();
     if(comando=="D")this.girarHaciaLaDerecha();
     if(comando=="I")this.girarHaciaLaIzquierda();
-    return this.x+","+this.y+this.direccion;
+    return this.x+","+this.y+","+this.direccion;
   }
 
   confirmarComandos(comandos){
     for(let i =0;i<comandos.length;i++){
       this.confirmar(comandos[i]);
     }
-    return this.x+","+this.y+this.direccion;
+    return this.x+","+this.y+","+this.direccion;
   }
 
   confirmarInstrucciones(instrucciones){
@@ -142,7 +143,7 @@ class Autito
     this.definirTamTab(comandos[0]);
     this.definirPosIni(comandos[1]);
     this.confirmarComandos(comandos[2]);
-    return this.x+","+this.y+this.direccion;
+    return this.x+","+this.y+","+this.direccion;
   }
 }
 
