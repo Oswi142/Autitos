@@ -1,23 +1,38 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="estilos.css">
+  </head>
   <body>
     <div class="container">
-    <form id="formulario">
+    <form id="form">
       <div>
-        <label>Comandos</label><br />
-        <textarea cols="50" id="comandos-input" width="500px" height="200px" ></textarea>
+        <h2>AUTITOS🚗</h2>
+        <p>Ingrese las instrucciones de la sigueinte manera<br>
+           Tamaño de la matriz / Posicion Inicial en X, Posicion Inicial Y y la Dirección / Recorrido 
+        <br>
+           <b>I</b> El auto gira hacia la izquierda
+        <br>
+           <b>D</b> El auto gira hacia la derecha
+        <br>
+           <b>A</b> El auto avanza donde este esté apuntando
+        <hr>
+        Ejemplo de las instrucciones:
+        <br>
+        <b>5,5/1,2N/IAIAIAIAA</b></p>
+        <textarea cols="50" id="comandos-input"></textarea>
       </div>
       <br>
-      <button type=submit value="ejecutar" class="btn btn-success">Empezar</button>
+      <button type=submit value="ejecutar" class="btn btn-success">Go!</button>
     </form>
-    <label class="mb-0">Posicion Inicial: </label>
-    <label id="posicion-inicial"></label>
+    <label>Posición inicial: </label>
+    <label id="pos-inicial"></label>
     <br>
     <label>Comandos: </label>
     <label id="comandos"></label>
-    <br>
-    <label>Posicion Final: </label>
-    <label id="posicion-final"></label>
+    <hr>
+    <label>Posición final: </label>
+    <label id="pos-final"></label>
   </div>
   </body>
-  <script type="module" src="./src/presenter.js"></script>
+  <script type="module" src="/presenter.js"></script>
 </html>
