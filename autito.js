@@ -56,15 +56,19 @@ class Autito
       {
         case "N":
           if(this.y<this.columnas) this.matriz[this.x][this.y++];
+          if(this.y>this.columnas) this.matriz[this.filas][this.y++];
           break;
         case "O":
-          if(this.x>0) this.matriz[this.x--][this.y];   
+          if(this.x>0) this.matriz[this.x--][this.y]; 
+          if(this.x<0) this.matriz[this.columnas][this.y];   
           break;
         case "S":
           if(this.y>0) this.matriz[this.x][this.y--];
+          if(this.y<0) this.matriz[this.x][this.filas];
           break;
         case "E":
           if(this.x<this.filas)this.matriz[this.x++][this.y];
+          if(this.x>this.filas)this.matriz[this.x++][this.columnas];
           break;
       }
   }
