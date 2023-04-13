@@ -103,8 +103,28 @@ class Autito
     }
   }
 
+  jump()
+  {
+      switch(this.direccion) 
+      {
+        case "N":
+          if(this.y<this.columnas) this.matriz[this.x][this.y+2];
+          break;
+        case "O":
+          if(this.x>0) this.matriz[this.x-2][this.y];   
+          break;
+        case "S":
+          if(this.y>0) this.matriz[this.x][this.y-2];
+          break;
+        case "E":
+          if(this.x<this.filas)this.matriz[this.x+2][this.y];
+          break;
+      }
+  }
+
   confirmar(comando){
-    if (comando=="A") this.avanzar();
+    if (comando=="A")this.avanzar();
+    if (comando=="J")this.jump();
     if(comando=="D")this.girarHaciaLaDerecha();
     if(comando=="I")this.girarHaciaLaIzquierda();
     return this.x+","+this.y+this.direccion;
