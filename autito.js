@@ -123,8 +123,8 @@ class Autito
   }
 
   confirmar(comando){
-    if (comando=="A")this.avanzar();
-    if (comando=="J")this.jump();
+    if(comando=="A")this.avanzar();
+    if(comando=="J")this.jump();
     if(comando=="D")this.girarHaciaLaDerecha();
     if(comando=="I")this.girarHaciaLaIzquierda();
     return this.x+","+this.y+this.direccion;
